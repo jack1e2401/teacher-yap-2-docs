@@ -29,7 +29,16 @@ function withinLimit(ip: string): boolean {
   return true;
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(_request: NextRequest) {
+  return NextResponse.json(
+    { error: 'Tính năng Thư viện sách đang trong quá trình phát triển.' },
+    { status: 503 }
+  );
+}
+
+// Logic gốc giữ lại để mở lại khi hoàn thiện tính năng
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function _handleTextbooks(request: NextRequest) {
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'local';
   if (!withinLimit(ip)) return NextResponse.json({ error: 'Quá nhiều yêu cầu. Vui lòng thử lại sau một phút.' }, { status: 429 });
   const parsed = inputSchema.safeParse(await request.json().catch(() => null));

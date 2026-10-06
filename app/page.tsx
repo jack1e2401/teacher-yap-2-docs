@@ -6,6 +6,7 @@ import GeneratorForm from './components/GeneratorForm';
 import ResultPanel from './components/ResultPanel';
 import HistoryPanel from './components/HistoryPanel';
 import LoadingScreen from './components/LoadingScreen';
+import DevModal from './components/DevModal';
 import { deleteArticle, listArticles, saveArticle, type SavedArticle } from '@/lib/client-storage';
 import { initialForm, type GeneratorFormData, type Kind, type QuestionType, type Tab } from '@/lib/form-model';
 import mockInputs from '@/lib/mock-inputs.json';
@@ -32,6 +33,7 @@ export default function Home() {
   const [error, setError] = useState('');
   const [slideIndex, setSlideIndex] = useState(0);
   const [present, setPresent] = useState(false);
+  const [showLibraryModal, setShowLibraryModal] = useState(false);
 
   const activeKind: Kind = tab === 'lesson' ? kind : tab;
   const form = forms[tab];
@@ -149,10 +151,17 @@ export default function Home() {
 
   return <main className="shell">
     <LoadingScreen active={busy || fileBusy} label={fileBusy ? 'Đang chuẩn bị file tải về…' : 'AI đang tạo nội dung…'}/>
+    <DevModal
+      open={showLibraryModal}
+      onClose={() => setShowLibraryModal(false)}
+      title="Tính năng đang phát triển"
+      message="Thư viện sách đang được hoàn thiện. Vui lòng quay lại sau."
+      actionLabel="Đã hiểu"
+    />
     <header><div className="eyebrow">CÔNG CỤ DÀNH CHO GIÁO VIÊN</div><h1>Trợ lý giáo viên AI</h1><p>Soạn bài, chuyển kế hoạch thành slide và phác thảo sáng kiến kinh nghiệm.</p></header>
     <nav>{([['lesson', 'Soạn bài'], ['slide', 'Tạo slide'], ['skkn', 'Viết SKKN']] as [Tab, string][]).map(([id, label]) =>
       <button key={id} className={tab === id ? 'active' : ''} onClick={() => { setTab(id); setError(''); }}>{label}</button>)}
-      <Link className="guideNav" href="/thu-vien">Thư viện sách ↗</Link>
+      <button type="button" className="guideNav" onClick={() => setShowLibraryModal(true)}>Thư viện sách ↗</button>
       <Link className="guideNav" href="/huong-dan">Hướng dẫn sử dụng ↗</Link>
     </nav>
     <div className="grid">
