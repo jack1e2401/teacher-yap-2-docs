@@ -1,0 +1,66 @@
+.documentPreview{max-height:760px;overflow:auto;margin-top:18px;background:#fff;border:1px solid #dce6e8;border-radius:11px;padding:28px 32px;color:#183245;line-height:1.65;box-shadow:0 5px 18px #20343b08}
+.previewPaperHead{border-bottom:2px solid #d5e5e6;padding-bottom:19px;margin-bottom:22px}
+.previewPaperHead span{display:block;font-size:11px;font-weight:800;letter-spacing:.15em;color:#0b7182}
+.previewPaperHead small{display:block;color:#6b8189;margin-top:9px}
+.previewPaperHead h3{font-size:27px;line-height:1.2;margin:12px 0 0;color:#183245}
+.documentPreview section{margin:23px 0}
+.documentPreview h4{font-size:18px;color:#0b7182;margin:0 0 10px}
+.documentPreview h5{font-size:16px;margin:0;color:#183245}
+.documentPreview p{font-size:14px;line-height:1.68;margin:8px 0;color:#324d59;white-space:pre-wrap}
+.previewActivity{border:1px solid #dce8e9;border-radius:9px;margin:16px 0;overflow:hidden}
+.previewActivityHead{display:flex;align-items:center;gap:12px;padding:11px 15px;background:#edf7f6}
+.previewActivityHead b{font-size:12px;color:#0b7182}
+.previewActivityHead span{margin-left:auto;color:#0b7182;font-size:12px;font-weight:700;white-space:nowrap}
+.previewActivity dl{display:grid;grid-template-columns:120px minmax(0,1fr);margin:0}
+.previewActivity dt,.previewActivity dd{padding:12px 15px;border-top:1px solid #e8eff0;font-size:13px}
+.previewActivity dt{font-weight:700;color:#526e78;background:#fbfdfd}
+.previewActivity dd{margin:0}.previewActivity dd p:first-child{margin-top:0}.previewActivity dd p:last-child{margin-bottom:0}
+.previewQuestion{border-bottom:1px solid #e5eeee;padding:16px 0}.previewQuestion:last-child{border-bottom:0}
+.previewQuestionHead{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;font-size:14px}
+.previewQuestionHead span{color:#0b7182;font-size:12px;white-space:nowrap}
+.previewQuestion ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 22px;margin:11px 0 0;padding-left:24px;color:#405d67;font-size:13px}
+.previewAnswerLine{height:24px;border-bottom:1px dotted #b7cace;margin-top:8px}
+.previewDetails{border-top:1px solid #dce8ea;padding:15px 0}.previewDetails summary{cursor:pointer;color:#0b7182;font-weight:700;font-size:14px}
+.previewAnswers{margin-top:14px}.previewAnswers>div{display:grid;grid-template-columns:75px 1fr 70px;gap:12px;padding:8px 0;border-bottom:1px solid #edf1f2;font-size:13px}.previewAnswers em{font-style:normal;color:#0b7182;text-align:right}
+.previewMetaRows>div{padding:9px 0;border-bottom:1px solid #e8eff0;display:flex;flex-wrap:wrap;gap:5px 15px;font-size:13px}.previewMetaRows b{color:#476974}
+.previewError{margin:20px 0;padding:20px;border-radius:9px;background:#fff0ee;color:#8a3229}
+.slidePreview{margin:20px 0 0;border:1px solid #d7e4e8;border-radius:12px;padding:12px}
+.slideCanvas{position:relative;aspect-ratio:16/9;width:100%;height:auto;overflow:hidden;border-radius:8px;padding:0!important;display:block!important;container-type:inline-size;font-family:Arial,Helvetica,sans-serif}
+.slideStyle0{background:#f7faf9;color:#17334a}.slideStyle1{background:#17334a;color:#fff}.slideStyle2{background:#fff8eb;color:#17334a}
+.pptStripe{position:absolute;left:0;right:0;top:0;height:1.5%;background:#087e8b}
+.pptTop{position:absolute;top:4.4%;left:5.9%;right:5.9%;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pptTop>span{font-size:1.1cqw;letter-spacing:.15em;text-transform:uppercase;color:#087e8b;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:68%}
+.slideStyle1 .pptTop>span{color:#aee5e4}
+.pptTop b{border:1px solid #b8dcd8;background:#e5f4ef;color:#087e8b;border-radius:100px;padding:.7cqw 1.3cqw;font-size:1.1cqw;letter-spacing:.04em;white-space:nowrap}
+.slideStyle1 .pptTop b{border-color:#65d1c8;background:#22465d;color:#aee5e4}
+.slideCanvas h3{position:absolute;left:5.9%;top:11.5%;width:88%;margin:0!important;color:inherit!important;font-size:3.15cqw!important;line-height:1.13;font-weight:800;letter-spacing:-.03em;max-width:none}
+.pptEditorial{position:absolute;left:6%;right:6%;top:27%;bottom:10%;display:flex;gap:7%}
+.pptRows{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-around}
+.pptRows>div{display:grid;grid-template-columns:7% 1fr;align-items:center;gap:5%;flex:1;border-bottom:1px solid #d2e1e0;min-height:0}
+.pptRows>div:last-child{border-bottom:0}
+.pptRows b{color:#087e8b;font-size:1.55cqw}
+.pptRows span{font-size:2.05cqw;line-height:1.22;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pptEditorial figure{width:42%;height:100%;margin:0;position:relative;background:#eaf4f2}
+.pptEditorial img{width:100%;height:100%;object-fit:fill;display:block}
+.pptEditorial figcaption{position:absolute;left:0;bottom:-4%;color:#657c86;font-size:.85cqw;letter-spacing:.07em}
+.pptProcess{position:absolute;left:5.9%;right:5.9%;top:32%;height:46%;display:flex;gap:1.3%}
+.pptStep{position:relative;flex:1;min-width:0;border:1px solid #3d7081;background:#1c4056;border-radius:8px;padding:2.2cqw 1.9cqw;display:flex;flex-direction:column;gap:1.8cqw}
+.pptStep:nth-child(even){background:#22465d}
+.pptStep>b{width:4cqw;height:4cqw;border-radius:50%;background:#65d1c8;color:#17334a;display:grid;place-items:center;font-size:1.8cqw}
+.pptStep p{color:#fff!important;font-size:1.7cqw!important;line-height:1.22;margin:0!important;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.pptStep>span{position:absolute;right:-1.4cqw;top:42%;font-size:4cqw;line-height:1;color:#65d1c8;z-index:1}
+.pptProcessCaption{position:absolute;left:6%;bottom:11%;font-size:1.05cqw;color:#aee5e4;letter-spacing:.12em;font-weight:800}
+.pptSplit{position:absolute;left:5.9%;right:5.9%;top:29.5%;bottom:12%;display:flex;gap:1.4%}
+.pptSplit>div{flex:1;min-width:0;background:#fff;border:1px solid #e5d9c2;padding:2.4cqw 2.1cqw}
+.pptSplit>div+div{background:#eaf4f2;border-color:#cbe2de}
+.pptSplit b{display:block;color:#087e8b;font-size:1.25cqw;letter-spacing:.08em;margin-bottom:2cqw}
+.pptSplit p{position:relative;padding-left:2cqw;color:#17334a!important;font-size:2cqw!important;line-height:1.25;margin:0 0 2.2cqw!important;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pptSplit p:before{content:"";position:absolute;left:0;top:.7cqw;width:.9cqw;height:.9cqw;border-radius:50%;background:#087e8b}
+.pptNumber{position:absolute;right:5.9%;bottom:2.4%;color:#087e8b;font-size:1.1cqw}.slideStyle1 .pptNumber{color:#aee5e4}
+.previewNotes{font-size:13px;color:#5c6e75;line-height:1.5;margin:11px 2px 0}
+.previewControls{align-items:center}.previewControls span{font-size:12px;color:#607982;padding:0 3px}
+.present{position:fixed;z-index:10;inset:0;background:#14232b;padding:2vh 3vw;display:flex;flex-direction:column;justify-content:center}
+.present .slideCanvas{width:min(100%,calc(82vh * 16 / 9));height:auto;aspect-ratio:16/9;margin:auto}
+.present .previewNotes{color:#d5e4e6;width:min(100%,calc(82vh * 16 / 9));margin:8px auto}
+.present .previewControls{width:min(100%,calc(82vh * 16 / 9));margin:8px auto 0}
+@media(max-width:600px){.documentPreview{padding:20px 18px}.previewActivity dl{grid-template-columns:1fr}.previewActivity dt{padding-bottom:2px}.previewActivity dd{border-top:0;padding-top:0}.previewQuestion ol{grid-template-columns:1fr}.pptTop b{font-size:1.3cqw}.pptRows span,.pptSplit p{font-size:2.2cqw!important}}
