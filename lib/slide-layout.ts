@@ -18,15 +18,20 @@ export function slidePages<T extends SlideItem>(slides: T[]): T[] {
   });
 }
 
-export function slideStyle(deckTitle: string, index: number, hasImage: boolean): 0 | 1 | 2 {
+export function slideStyle(_deckTitle: string, title: string, index: number, hasImage: boolean): 0 | 1 | 2 | 3 | 4 {
+  if (index === 0) return 0;
+  if (/từ vựng|vocabulary|language focus|ngữ pháp|grammar/i.test(title)) return 1;
+  if (/sơ đồ|mind.?map|nói|speaking|vận dụng|application/i.test(title)) return 3;
   if (hasImage) return 0;
-  let hash = 0;
-  for (const char of deckTitle) hash = (hash * 31 + char.charCodeAt(0)) | 0;
-  return ((index + Math.abs(hash % 3)) % 3) as 0 | 1 | 2;
+  if (/củng cố|wrap.?up|homework|bài tập về nhà|consolidation/i.test(title)) return 4;
+  if (/luyện tập|practice|kiểm tra|question|quiz|bài tập|đọc hiểu|comprehension/i.test(title)) return 2;
+  return index % 2 ? 2 : 4;
 }
 
 export function slideBadge(title: string) {
   return /kiểm tra|câu hỏi|quiz/i.test(title) ? 'KIỂM TRA'
+    : /sơ đồ|mind.?map/i.test(title) ? 'SƠ ĐỒ Ý'
+    : /nói|speaking/i.test(title) ? 'LUYỆN NÓI'
     : /luyện|thực hành|vận dụng/i.test(title) ? 'THỰC HÀNH'
     : /khởi động|warm/i.test(title) ? 'KHỞI ĐỘNG' : 'KHÁM PHÁ';
 }

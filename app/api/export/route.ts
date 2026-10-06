@@ -56,7 +56,9 @@ function documentBytes(blocks: Block[], label: string) {
 }
 function lessonBlocks(d: ReturnType<typeof lessonSchema.parse>, input: Request): Block[] {
   return [title('KẾ HOẠCH BÀI DẠY'), para(d.title, true), table([['Môn học', 'Lớp', 'Bộ sách', 'Thời lượng'], [input.subject || '—', String(input.grade), input.book || '—', input.duration + ' phút']]),
-    h('I. Mục tiêu'), ...paragraphs(d.goals), h('II. Thiết bị dạy học và học liệu'), ...paragraphs(d.materials), h('III. Tiến trình dạy học'),
+    h('I. Mục tiêu và trọng tâm bài học'), ...paragraphs(d.goals), h('II. Thiết bị dạy học và học liệu'), ...paragraphs(d.materials),
+    h('III. Minh chứng đánh giá'), table([['Hoạt động', 'Sản phẩm học sinh'], ...d.activities.map(a => [a.name, a.product])], [28, 72]),
+    h('IV. Tiến trình dạy học'),
     ...d.activities.flatMap((a, i): Block[] => [h(`Hoạt động ${i + 1}. ${a.name} (${a.minutes} phút)`, true, true),
       table([['Mục', 'Nội dung'], ['Mục tiêu', a.goal], ['Nội dung', a.content], ['Sản phẩm', a.product], ['Tổ chức thực hiện', a.method]]), para('')]),
     para('Giáo viên đối chiếu kế hoạch của tổ chuyên môn và Phụ lục IV Công văn 5512.')];
@@ -93,57 +95,68 @@ function skknBlocks(d: ReturnType<typeof skknSchema.parse>, input: Request): Blo
 async function slideBytes(d: ReturnType<typeof slideSchema.parse>) {
   const pptx = new pptxgen(); pptx.layout = 'LAYOUT_WIDE'; pptx.author = 'Trợ lý giáo viên AI'; pptx.title = d.title;
   const pages = slidePages(d.slides);
+  const teal = '48C0B6', dark = '17334A', pale = 'CBEAF0', cream = 'FFF8EB';
   pages.forEach((item, index) => {
     const slide = pptx.addSlide(), image = item.imageData;
-    const style = slideStyle(d.title, index, Boolean(image));
-    const navy = '17334A', teal = '087E8B', pale = 'EAF4F2', cream = 'FFF8EB';
-    slide.background = { color: style === 1 ? navy : style === 2 ? cream : 'F7FAF9' };
-    const dark = style === 1;
-    const fg = dark ? 'FFFFFF' : navy;
-    const sub = dark ? 'AEE5E4' : teal;
-    const badge = slideBadge(item.title);
-    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 0.11, line: { color: teal }, fill: { color: teal } });
-    slide.addText(d.title.toUpperCase(), { x: 0.78, y: 0.39, w: 10.9, h: 0.25, fontFace: 'Arial', fontSize: 10, bold: true, charSpacing: 1.3, color: sub, margin: 0 });
-    slide.addShape(pptx.ShapeType.roundRect, { x: 10.7, y: 0.31, w: 1.85, h: 0.38, rectRadius: 0.12, line: { color: dark ? '65D1C8' : 'B8DCD8', width: 1 }, fill: { color: dark ? '22465D' : 'E5F4EF' } });
-    slide.addText(`✦  ${badge}`, { x: 10.82, y: 0.4, w: 1.62, h: 0.17, fontFace: 'Arial', fontSize: 10, bold: true, align: 'center', color: dark ? 'AEE5E4' : teal, margin: 0 });
-    slide.addText(item.title, { x: 0.78, y: 0.91, w: 11.7, h: 0.88, fontFace: 'Arial', fontSize: item.title.length > 50 ? 27 : 32, bold: true, color: fg, margin: 0, breakLine: false });
+    const style = slideStyle(d.title, item.title, index, Boolean(image));
+    slide.background = { color: style === 3 ? cream : 'FFFFFF' };
+    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 1.12, line: { color: teal }, fill: { color: teal } });
+    slide.addText(item.title, { x: 0.5, y: 0.24, w: 9.5, h: 0.58, fontFace: 'Arial', fontSize: item.title.length > 48 ? 25 : 31, bold: true, color: 'FFFFFF', margin: 0, breakLine: false });
+    slide.addText(d.title.toUpperCase(), { x: 10.1, y: 0.46, w: 2.7, h: 0.25, align: 'right', fontFace: 'Arial', fontSize: 9, bold: true, color: 'FFFFFF', margin: 0 });
     if (style === 0) {
-      const textW = image ? 6.2 : 11.6;
+      const rowWidth = image ? 6.3 : 11.8;
       item.bullets.forEach((bullet, i) => {
-        const y = 2.14 + i * (4.48 / item.bullets.length);
-        slide.addText(String(i + 1).padStart(2, '0'), { x: 0.82, y, w: 0.6, h: 0.42, fontFace: 'Arial', fontSize: 15, bold: true, color: teal, margin: 0 });
-        slide.addText(bullet, { x: 1.55, y: y - 0.08, w: textW - 1.1, h: Math.min(0.92, 4.2 / item.bullets.length), fontFace: 'Arial', fontSize: bullet.length > 95 ? 18 : 21, color: navy, margin: 0, valign: 'middle', breakLine: false });
-        if (i < item.bullets.length - 1) slide.addShape(pptx.ShapeType.line, { x: 0.82, y: y + 0.83, w: textW - 0.25, h: 0, line: { color: 'D2E1E0', width: 1 } });
+        const y = 1.48 + i * (4.95 / item.bullets.length);
+        slide.addShape(pptx.ShapeType.roundRect, { x: 0.56, y: y + 0.06, w: 0.48, h: 0.48, rectRadius: 0.08, line: { color: teal }, fill: { color: teal } });
+        slide.addText(String(i + 1), { x: 0.56, y: y + 0.12, w: 0.48, h: 0.27, align: 'center', fontFace: 'Arial', fontSize: 15, bold: true, color: 'FFFFFF', margin: 0 });
+        slide.addText(bullet, { x: 1.24, y, w: rowWidth - 0.7, h: Math.min(0.95, 4.7 / item.bullets.length), fontFace: 'Arial', fontSize: bullet.length > 85 ? 18 : 21, color: dark, margin: 0, valign: 'middle', breakLine: false });
       });
       if (image) {
-        slide.addShape(pptx.ShapeType.rect, { x: 7.48, y: 2.02, w: 5.1, h: 4.56, line: { color: 'FFFFFF' }, fill: { color: pale } });
-        slide.addImage({ data: image, x: 7.48, y: 2.02, w: 5.1, h: 4.56 });
-        slide.addText('WIKIMEDIA COMMONS', { x: 7.52, y: 6.62, w: 4.8, h: 0.2, fontFace: 'Arial', fontSize: 8, color: '657C86', margin: 0 });
+        slide.addShape(pptx.ShapeType.rect, { x: 7.48, y: 1.45, w: 5.3, h: 5.15, line: { color: 'D6EAEA', width: 1 }, fill: { color: pale } });
+        slide.addImage({ data: image, x: 7.48, y: 1.45, w: 5.3, h: 5.15 });
       }
     } else if (style === 1) {
-      const gap = 0.16, cardW = (11.8 - gap * (item.bullets.length - 1)) / item.bullets.length;
+      const rowWidth = image ? 6.45 : 11.9;
       item.bullets.forEach((bullet, i) => {
-        const x = 0.78 + i * (cardW + gap);
-        slide.addShape(pptx.ShapeType.roundRect, { x, y: 2.44, w: cardW, h: 3.44, rectRadius: 0.08, line: { color: '3D7081', width: 1 }, fill: { color: i % 2 ? '22465D' : '1C4056' } });
-        slide.addShape(pptx.ShapeType.ellipse, { x: x + 0.22, y: 2.7, w: 0.56, h: 0.56, line: { color: '65D1C8' }, fill: { color: '65D1C8' } });
-        slide.addText(String(i + 1), { x: x + 0.22, y: 2.72, w: 0.56, h: 0.45, align: 'center', fontFace: 'Arial', fontSize: 17, bold: true, color: navy, margin: 0 });
-        slide.addText(bullet, { x: x + 0.22, y: 3.58, w: cardW - 0.44, h: 1.95, fontFace: 'Arial', fontSize: item.bullets.length >= 4 || bullet.length > 90 ? 17 : 20, color: 'FFFFFF', margin: 0.02, valign: 'middle' });
-        if (i < item.bullets.length - 1) slide.addShape(pptx.ShapeType.chevron, { x: x + cardW - 0.04, y: 3.76, w: 0.28, h: 0.5, line: { color: '65D1C8' }, fill: { color: '65D1C8' } });
+        const y = 1.39 + i * (5.18 / item.bullets.length);
+        slide.addShape(pptx.ShapeType.roundRect, { x: 0.48, y, w: rowWidth, h: Math.min(1.05, 4.88 / item.bullets.length), rectRadius: 0.05, line: { color: i % 2 ? 'B6E2E0' : pale }, fill: { color: i % 2 ? 'F2FAF9' : 'E6F7F5' } });
+        slide.addText(bullet, { x: 0.7, y: y + 0.12, w: rowWidth - 0.44, h: Math.min(0.75, 4.4 / item.bullets.length), fontFace: 'Arial', fontSize: bullet.length > 90 ? 17 : 20, color: dark, margin: 0, valign: 'middle' });
       });
-      slide.addText('QUAN SÁT  →  THỰC HÀNH  →  VẬN DỤNG', { x: 0.8, y: 6.32, w: 11, h: 0.26, fontFace: 'Arial', fontSize: 10, bold: true, charSpacing: 1.1, color: sub, margin: 0 });
+      if (image) {
+        slide.addShape(pptx.ShapeType.rect, { x: 7.25, y: 1.39, w: 5.55, h: 5.15, line: { color: 'D6EAEA' }, fill: { color: pale } });
+        slide.addImage({ data: image, x: 7.25, y: 1.39, w: 5.55, h: 5.15 });
+      }
+    } else if (style === 2) {
+      const cols = 2, rows = Math.ceil(item.bullets.length / cols);
+      item.bullets.forEach((bullet, i) => {
+        const col = i % cols, row = Math.floor(i / cols), x = 0.55 + col * 6.38, y = 1.55 + row * (4.95 / rows);
+        slide.addShape(pptx.ShapeType.roundRect, { x, y, w: 5.92, h: Math.min(2.08, 4.55 / rows), rectRadius: 0.08, line: { color: 'A7DAD7', width: 1 }, fill: { color: i % 2 ? 'F1FAF9' : 'FFF8EB' } });
+        slide.addShape(pptx.ShapeType.ellipse, { x: x + 0.22, y: y + 0.22, w: 0.45, h: 0.45, line: { color: teal }, fill: { color: teal } });
+        slide.addText(String(i + 1), { x: x + 0.22, y: y + 0.3, w: 0.45, h: 0.2, align: 'center', fontFace: 'Arial', fontSize: 13, bold: true, color: 'FFFFFF', margin: 0 });
+        slide.addText(bullet, { x: x + 0.8, y: y + 0.2, w: 4.85, h: Math.min(1.6, 4.1 / rows), fontFace: 'Arial', fontSize: bullet.length > 85 ? 17 : 20, color: dark, margin: 0, valign: 'middle' });
+      });
+    } else if (style === 3) {
+      [[4.27, 2.55, 0.75, 0.9], [8.32, 3.5, 0.75, -0.95], [4.27, 5.63, 0.75, -1.55], [8.32, 4.05, 0.75, 1.58]].forEach(([x, y, w, h]) =>
+        slide.addShape(pptx.ShapeType.line, { x, y, w, h, line: { color: '79BBB6', width: 2 } }));
+      slide.addShape(pptx.ShapeType.ellipse, { x: 5.02, y: 3.05, w: 3.3, h: 1.35, line: { color: 'F7941E' }, fill: { color: 'F7941E' } });
+      slide.addText(slideBadge(item.title), { x: 5.33, y: 3.45, w: 2.68, h: 0.38, align: 'center', fontFace: 'Arial', fontSize: 20, bold: true, color: 'FFFFFF', margin: 0 });
+      const spots = [[0.72, 1.8], [9.07, 1.8], [0.72, 4.88], [9.07, 4.88]];
+      const fills = ['FFE599', pale, 'D9EAD3', 'FCE5CD'];
+      item.bullets.forEach((bullet, i) => {
+        const [x, y] = spots[i];
+        slide.addShape(pptx.ShapeType.roundRect, { x, y, w: 3.55, h: 1.5, rectRadius: 0.12, line: { color: 'D3DDDC' }, fill: { color: fills[i] } });
+        slide.addText(bullet, { x: x + 0.18, y: y + 0.16, w: 3.19, h: 1.16, align: 'center', valign: 'middle', fontFace: 'Arial', fontSize: bullet.length > 65 ? 16 : 18, color: dark, margin: 0 });
+      });
     } else {
-      const left = item.bullets.slice(0, Math.ceil(item.bullets.length / 2)), right = item.bullets.slice(left.length);
-      slide.addShape(pptx.ShapeType.rect, { x: 0.78, y: 2.22, w: 5.8, h: 4.35, line: { color: 'E5D9C2' }, fill: { color: 'FFFFFF' } });
-      slide.addShape(pptx.ShapeType.rect, { x: 6.76, y: 2.22, w: 5.8, h: 4.35, line: { color: 'CBE2DE' }, fill: { color: pale } });
-      slide.addText('KHÁM PHÁ', { x: 1.05, y: 2.55, w: 5, h: 0.3, fontFace: 'Arial', fontSize: 12, bold: true, color: teal, margin: 0 });
-      slide.addText('ÁP DỤNG', { x: 7.03, y: 2.55, w: 5, h: 0.3, fontFace: 'Arial', fontSize: 12, bold: true, color: teal, margin: 0 });
-      [left, right].forEach((group, col) => group.forEach((bullet, i) => {
-        const x = col ? 7.03 : 1.05, y = 3.12 + i * (3.08 / Math.max(1, group.length));
-        slide.addShape(pptx.ShapeType.ellipse, { x, y: y + 0.13, w: 0.13, h: 0.13, line: { color: teal }, fill: { color: teal } });
-        slide.addText(bullet, { x: x + 0.34, y, w: 4.8, h: Math.min(1.25, 2.84 / Math.max(1, group.length)), fontFace: 'Arial', fontSize: bullet.length > 95 ? 18 : 21, color: navy, margin: 0, valign: 'middle' });
-      }));
+      slide.addText('TỔNG KẾT BÀI HỌC', { x: 0.75, y: 1.42, w: 11.2, h: 0.42, fontFace: 'Arial', fontSize: 15, bold: true, color: '0A8C91', charSpacing: 1.2, margin: 0 });
+      item.bullets.forEach((bullet, i) => {
+        const y = 2.0 + i * (4.55 / item.bullets.length);
+        slide.addShape(pptx.ShapeType.ellipse, { x: 0.8, y, w: 0.52, h: 0.52, line: { color: teal }, fill: { color: teal } });
+        slide.addText(String(i + 1), { x: 0.8, y: y + 0.08, w: 0.52, h: 0.29, align: 'center', fontFace: 'Arial', fontSize: 16, bold: true, color: 'FFFFFF', margin: 0 });
+        slide.addText(bullet, { x: 1.57, y: y - 0.04, w: 10.7, h: Math.min(0.85, 4.35 / item.bullets.length), fontFace: 'Arial', fontSize: bullet.length > 90 ? 18 : 22, color: dark, valign: 'middle', margin: 0 });
+      });
     }
-    slide.addText(`${index + 1} / ${pages.length}`, { x: 11.58, y: 7.08, w: 0.98, h: 0.2, align: 'right', fontFace: 'Arial', fontSize: 10, color: sub, margin: 0 });
+    slide.addText(`${index + 1} / ${pages.length}`, { x: 11.78, y: 7.12, w: 1, h: 0.2, align: 'right', fontFace: 'Arial', fontSize: 10, color: '397077', margin: 0 });
     slide.addNotes(item.speakerNotes + (image && item.imageCredit ? '\n' + item.imageCredit : ''));
   });
   return pptx.write({ outputType: 'nodebuffer' }) as Promise<Buffer>;

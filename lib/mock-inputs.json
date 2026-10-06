@@ -1,0 +1,55 @@
+{
+  "lesson": {
+    "subject": "Tiếng Anh",
+    "grade": 6,
+    "book": "Kết nối tri thức với cuộc sống",
+    "title": "My New School",
+    "duration": 45,
+    "goals": "Nhận biết và sử dụng từ vựng về trường học; giới thiệu ngắn về ngôi trường của mình.",
+    "source": "Chủ đề: My New School. Từ vựng: school, classroom, teacher. Học sinh luyện nghe, nói và giới thiệu trường của em."
+  },
+  "exam": {
+    "subject": "Tiếng Anh",
+    "grade": 6,
+    "book": "Kết nối tri thức với cuộc sống",
+    "title": "Kiểm tra chủ đề My New School",
+    "duration": 15,
+    "goals": "Đánh giá từ vựng và khả năng viết câu về trường học.",
+    "source": "Từ vựng: school, classroom, teacher. Cấu trúc: My school is ...",
+    "scope": "Chủ đề My New School, Tiếng Anh 6",
+    "points": 10,
+    "questionCount": 5,
+    "questionTypes": "",
+    "questionTypeCounts": {
+      "trắc nghiệm": 3,
+      "đúng sai": 0,
+      "trả lời ngắn": 1,
+      "tự luận": 1
+    }
+  },
+  "slide": {
+    "subject": "Tiếng Anh",
+    "grade": 6,
+    "book": "Kết nối tri thức với cuộc sống",
+    "title": "Unit 5: Food and Drink – Skills 1",
+    "duration": 45,
+    "slideCount": 12,
+    "goals": "Đọc lấy thông tin cụ thể về món phở; nói về món ăn hoặc đồ uống phổ biến ở địa phương.",
+    "materials": "SGK Tiếng Anh 6; tranh món ăn; đánh giá qua trả lời câu hỏi và phần trình bày nhóm.",
+    "warmup": "Chatting: What do you often eat for breakfast? What is your favourite food?",
+    "vocabulary": "snack – đồ ăn vặt; taste – nếm; broth – nước dùng; stew – hầm; boneless – không xương.",
+    "reading": "Đọc bài về phở: nguyên liệu, cách nấu, thời điểm thưởng thức. Ghép từ với nghĩa và trả lời câu hỏi đọc hiểu.",
+    "practice": "Trắc nghiệm 3 câu đọc hiểu; hỏi đáp theo cặp về món ăn yêu thích và nguyên liệu.",
+    "application": "Lập sơ đồ ý về một món ăn địa phương: ingredients, when, where, how often. Trình bày theo nhóm 3–4 học sinh.",
+    "homework": "Ghi âm hoặc quay video ngắn giới thiệu món ăn; chuẩn bị bài Skills 2.",
+    "source": ""
+  },
+  "skkn": {
+    "subject": "Tiếng Anh",
+    "grade": 6,
+    "title": "Tăng hứng thú học từ vựng Tiếng Anh lớp 6 qua hoạt động theo cặp",
+    "problem": "Một số học sinh ít chủ động dùng từ vựng mới khi nói. Cần giáo viên bổ sung số liệu khảo sát thực tế của lớp.",
+    "measures": "Dự kiến dùng tranh, trò chơi ngắn và luyện nói theo cặp; ghi nhận mức độ tham gia sau từng buổi.",
+    "evidence": "[CẦN GIÁO VIÊN BỔ SUNG] số liệu trước/sau, sản phẩm học sinh và nhận xét của tổ chuyên môn."
+  }
+}

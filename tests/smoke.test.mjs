@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
-const base='http://localhost:3000';
+const base=process.env.TEST_BASE_URL || 'http://localhost:3000';
 const envFile = new URL('../.env.local', import.meta.url);
 const hasKey = existsSync(envFile) && /^DEEPSEEK_API_KEY\s*=\s*\S+/m.test(readFileSync(envFile, 'utf8'));
 test('trang chính và ba tab được phục vụ',async()=>{const r=await fetch(base);assert.equal(r.status,200);const html=await r.text();for(const text of ['Soạn bài','Tạo slide','Viết SKKN'])assert.ok(html.includes(text));});

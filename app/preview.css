@@ -64,3 +64,23 @@
 .present .previewNotes{color:#d5e4e6;width:min(100%,calc(82vh * 16 / 9));margin:8px auto}
 .present .previewControls{width:min(100%,calc(82vh * 16 / 9));margin:8px auto 0}
 @media(max-width:600px){.documentPreview{padding:20px 18px}.previewActivity dl{grid-template-columns:1fr}.previewActivity dt{padding-bottom:2px}.previewActivity dd{border-top:0;padding-top:0}.previewQuestion ol{grid-template-columns:1fr}.pptTop b{font-size:1.3cqw}.pptRows span,.pptSplit p{font-size:2.2cqw!important}}
+.slideFields{display:grid;gap:12px}.slideFields .row{margin:0}.slideSource{border:1px solid #d7e5e8;border-radius:8px;padding:11px 13px}.slideSource summary{cursor:pointer;font-weight:700;color:#0b7182}.slideSource label{margin-top:12px}
+.referenceStyle{background:#fff;color:#17334a}.referenceStyle3{background:#fff8eb}
+.referenceHeader{position:absolute;inset:0 0 auto;height:15%;background:#48c0b6;color:#fff}
+.referenceStyle .referenceHeader h3{position:absolute;left:4%;top:21%;width:72%;font-size:3.05cqw!important;line-height:1.08;margin:0!important;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0}
+.referenceHeader span{position:absolute;right:4%;top:44%;max-width:22%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;text-align:right;font-size:1cqw;font-weight:800}
+.referenceHero,.referenceVocabulary{position:absolute;left:4%;right:4%;top:19%;bottom:11%;display:flex;gap:4%}
+.referenceHeroPoints,.referenceVocabulary>div{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-around}
+.referenceHeroPoints p{display:flex;align-items:center;gap:3%;height:100%;margin:0!important;color:#17334a!important;font-size:2cqw!important;line-height:1.22;min-height:0}
+.referenceHeroPoints b,.referenceWrap b{flex:none;width:3.9cqw;height:3.9cqw;border-radius:8px;background:#48c0b6;color:white;display:grid;place-items:center;font-size:1.55cqw}
+.referenceHeroPoints span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.referenceHero img,.referenceVocabulary img{width:43%;height:100%;object-fit:fill;border:1px solid #d6eaea;background:#cbeaf0}
+.referenceVocabulary>div{gap:1.2%}.referenceVocabulary p{flex:1;display:flex;align-items:center;min-height:0;padding:1.1cqw 1.8cqw;margin:0!important;background:#e6f7f5;border:1px solid #cbeaf0;border-radius:7px;color:#17334a!important;font-size:1.9cqw!important;line-height:1.2;overflow:hidden}.referenceVocabulary p:nth-child(even){background:#f2faf9}
+.referenceQuestions{position:absolute;left:4%;right:4%;top:20%;bottom:11%;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4%}
+.referenceQuestions>div{border:1px solid #a7dad7;border-radius:9px;background:#fff8eb;padding:1.5cqw 1.9cqw;display:flex;gap:1.1cqw;align-items:flex-start;overflow:hidden}.referenceQuestions>div:nth-child(even){background:#f1faf9}
+.referenceQuestions b{flex:none;width:3.4cqw;height:3.4cqw;border-radius:50%;display:grid;place-items:center;background:#48c0b6;color:#fff;font-size:1.5cqw}.referenceQuestions p{margin:0!important;color:#17334a!important;font-size:1.8cqw!important;line-height:1.24;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.referenceMap{position:absolute;left:0;right:0;top:15%;bottom:7%}.referenceMapCenter{position:absolute;left:37.5%;top:37%;width:25%;height:23%;border-radius:50%;background:#f7941e;display:grid;place-items:center;color:#fff;font-size:1.8cqw;font-weight:800;text-align:center}
+.referenceMapLines{position:absolute;inset:0;width:100%;height:100%}.referenceMapLines path{fill:none;stroke:#79bbb6;stroke-width:.45}
+.referenceMap .mapItem{position:absolute;width:27%;height:25%;border:1px solid #d3dddc;border-radius:12px;display:grid;place-items:center;text-align:center;padding:1.2cqw;margin:0!important;font-size:1.7cqw!important;line-height:1.22;color:#17334a!important;overflow:hidden}.mapItem0{left:5%;top:10%;background:#ffe599}.mapItem1{right:5%;top:10%;background:#cbeaf0}.mapItem2{left:5%;bottom:9%;background:#d9ead3}.mapItem3{right:5%;bottom:9%;background:#fce5cd}
+.referenceWrap{position:absolute;left:6%;right:6%;top:20%;bottom:10%;display:flex;flex-direction:column;justify-content:space-around}.referenceWrap>strong{color:#0a8c91;letter-spacing:.13em;font-size:1.3cqw}.referenceWrap p{display:flex;align-items:center;gap:2%;margin:0!important;flex:1;color:#17334a!important;font-size:2cqw!important;line-height:1.22}.referenceWrap b{border-radius:50%}.referenceWrap span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.referenceNumber{position:absolute;right:4%;bottom:2.5%;font-size:1cqw;color:#397077}

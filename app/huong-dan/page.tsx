@@ -13,6 +13,7 @@ const sections = [
   { id: 'slide', label: 'Tạo slide' },
   { id: 'skkn', label: 'Viết SKKN' },
   { id: 'tai-file', label: 'Tải và sửa file' },
+  { id: 'thu-vien', label: 'Thư viện & lịch sử' },
   { id: 'loi', label: 'Lỗi thường gặp' },
 ];
 
@@ -41,7 +42,7 @@ export default function GuidePage() {
 
         <section id="soan-bai" className="guideSection">
           <span className="guideKicker">02 · WORD</span><h2>Kế hoạch bài dạy</h2>
-          <ol><li>Trong <strong>Soạn bài</strong>, chọn <strong>Kế hoạch bài dạy</strong>.</li><li>Điền môn, lớp, bộ sách, tên bài, thời lượng và yêu cầu cần đạt. Dán tài liệu giáo viên cung cấp nếu có.</li><li>Bấm <strong>Tạo với AI</strong>. Bản nháp gồm mục tiêu, học liệu và bốn hoạt động: khởi động, hình thành kiến thức, luyện tập, vận dụng.</li><li>Kiểm tra thời lượng từng hoạt động, câu hỏi, sản phẩm học sinh và cách đánh giá; sau đó tải <strong>.docx</strong>.</li></ol>
+          <ol><li>Trong <strong>Soạn bài</strong>, chọn <strong>Kế hoạch bài dạy</strong>.</li><li>Điền môn, lớp, bộ sách, tên bài, thời lượng, yêu cầu cần đạt và mục tiêu từ <strong>5 đến 24 trang</strong>. Dán tài liệu giáo viên cung cấp nếu có.</li><li>Bấm <strong>Tạo với AI</strong>. Bản nháp gồm mục tiêu, học liệu và bốn hoạt động: khởi động, hình thành kiến thức, luyện tập, vận dụng.</li><li>Kiểm tra thời lượng từng hoạt động, câu hỏi, sản phẩm học sinh và cách đánh giá; sau đó tải <strong>.docx</strong>.</li></ol>
           <p className="guideAside">Nội dung càng cụ thể thì bài soạn càng sát lớp học. Ví dụ: nêu từ vựng, cấu trúc, hoạt động và mục tiêu cần đạt thay vì chỉ nhập tên bài.</p>
         </section>
 
@@ -53,13 +54,13 @@ export default function GuidePage() {
 
         <section id="slide" className="guideSection">
           <span className="guideKicker">04 · POWERPOINT</span><h2>Tạo slide từ kế hoạch bài dạy</h2>
-          <ol><li>Chọn <strong>Tạo slide</strong>, dán kế hoạch bài dạy hoặc tải tệp <strong>.txt / .docx</strong>.</li><li>Chọn từ <strong>8 đến 20 slide</strong>, rồi bấm <strong>Tạo với AI</strong>.</li><li>Xem từng slide bằng nút Trước/Sau; dùng Trình chiếu để xem lớn. Ghi chú bên dưới dành cho giáo viên.</li><li>Tải <strong>.pptx</strong>. Bố cục, chữ, badge và sơ đồ có thể sửa trong PowerPoint.</li></ol>
+          <ol><li>Chọn <strong>Tạo slide</strong>, điền môn, lớp, bộ sách, tên bài và mục tiêu.</li><li>Điền các ô khởi động, từ vựng, bài đọc, luyện tập, vận dụng và củng cố. Có thể mở <strong>Tài liệu tham khảo thêm</strong> để dán hoặc tải tệp <strong>.txt / .docx</strong>.</li><li>Chọn từ <strong>8 đến 20 slide</strong>, rồi bấm <strong>Tạo với AI</strong>. Xem từng trang bằng Trước/Sau hoặc Trình chiếu.</li><li>Tải <strong>.pptx</strong> và chỉnh sửa nội dung, ảnh, sơ đồ trong PowerPoint.</li></ol>
           <p className="guideAside">Ảnh minh họa được tìm từ Wikimedia Commons khi có ảnh phù hợp và máy chủ có kết nối mạng. Nếu không tìm được, slide vẫn xuất với các thành phần đồ họa có thể chỉnh sửa.</p>
         </section>
 
         <section id="skkn" className="guideSection">
           <span className="guideKicker">05 · WORD</span><h2>Viết bản dự thảo SKKN</h2>
-          <ol><li>Chọn <strong>Viết SKKN</strong> và nhập tên đề tài, vấn đề/thực trạng, biện pháp cùng minh chứng trước–sau nếu có.</li><li>Bấm <strong>Tạo với AI</strong>. Hệ thống viết các mục đặt vấn đề, cơ sở, thực trạng, biện pháp, đánh giá, khả năng áp dụng và kết luận.</li><li>Kiểm tra các vị trí <strong>[CẦN GIÁO VIÊN BỔ SUNG]</strong>, thêm số liệu và tài liệu đã xác minh rồi tải <strong>.docx</strong>.</li></ol>
+          <ol><li>Chọn <strong>Viết SKKN</strong> và nhập tên đề tài, vấn đề/thực trạng, biện pháp, minh chứng trước–sau và mục tiêu <strong>5–24 trang</strong>.</li><li>Bấm <strong>Tạo với AI</strong>. Hệ thống viết các mục đặt vấn đề, cơ sở, thực trạng, biện pháp, đánh giá, khả năng áp dụng và kết luận.</li><li>Kiểm tra các vị trí <strong>[CẦN GIÁO VIÊN BỔ SUNG]</strong>, thêm số liệu và tài liệu đã xác minh rồi tải <strong>.docx</strong>.</li></ol>
           <div className="guideNote"><strong>Lưu ý:</strong> Đây là bản dự thảo. App không tự xác minh thành tích, số liệu hay nguồn tham khảo.</div>
         </section>
 
@@ -67,6 +68,13 @@ export default function GuidePage() {
           <span className="guideKicker">06 · KẾT QUẢ</span><h2>Chỉnh sửa và tải file</h2>
           <p>Kết quả nằm ở cột bên phải dưới dạng bản xem trước dễ đọc. Với đề kiểm tra, mở phần đáp án và ma trận ở cuối bản xem trước. Với slide, dùng Trước/Sau để kiểm tra từng trang.</p>
           <p>Word dùng định dạng <strong>.docx</strong>; slide dùng <strong>.pptx</strong>. Tải file rồi mở trong Word/PowerPoint để chỉnh nội dung và bố cục cuối cùng.</p>
+        </section>
+
+        <section id="thu-vien" className="guideSection">
+          <span className="guideKicker">07 · LƯU TRỮ</span><h2>Thư viện sách và lịch sử</h2>
+          <p>Mở <Link href="/thu-vien">Thư viện sách</Link> để lưu tóm tắt theo lớp 1–12, môn, sách hoặc từng bài. Có thể dán nội dung hoặc tải tài liệu TXT/DOCX riêng, nhờ AI tóm tắt rồi đặt câu hỏi dựa trên bản tóm tắt. Nếu tài liệu thiếu thông tin, AI sẽ báo chưa đủ dữ kiện.</p>
+          <p>Bài đã tạo bằng AI được lưu trong <strong>Lịch sử trên máy</strong> ở trang chính. Dữ liệu nằm trong trình duyệt đang dùng: mở lại cùng địa chỉ localhost vẫn thấy bài cũ; đổi trình duyệt, tên miền hoặc xóa dữ liệu trình duyệt sẽ có kho khác.</p>
+          <p>Số trang 5–24 là <strong>mục tiêu nội dung</strong>, không phải số trang Word cố định. Kiểm tra bản xuất và chỉnh sửa khi cần.</p>
         </section>
 
         <section id="loi" className="guideSection">

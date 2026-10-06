@@ -1,0 +1,214 @@
+{
+  "lesson": {
+    "title": "Kế hoạch bài dạy: My New School",
+    "goals": "Học sinh nhận biết từ vựng về trường học; giới thiệu ngắn về trường của mình.",
+    "materials": "Sách Tiếng Anh 6, bảng, tranh về trường học.",
+    "activities": [
+      {
+        "name": "Khởi động",
+        "minutes": 5,
+        "goal": "Gợi hứng thú",
+        "content": "Quan sát tranh trường học",
+        "product": "Từ vựng ban đầu",
+        "method": "Giáo viên hỏi, học sinh trả lời"
+      },
+      {
+        "name": "Hình thành kiến thức",
+        "minutes": 20,
+        "goal": "Nắm từ vựng",
+        "content": "School, classroom, teacher",
+        "product": "Danh sách từ và ví dụ",
+        "method": "Nghe, đọc, luyện tập theo cặp"
+      },
+      {
+        "name": "Luyện tập",
+        "minutes": 15,
+        "goal": "Sử dụng từ mới",
+        "content": "Hỏi đáp về trường",
+        "product": "Đoạn hội thoại ngắn",
+        "method": "Làm việc theo cặp"
+      },
+      {
+        "name": "Vận dụng",
+        "minutes": 5,
+        "goal": "Liên hệ thực tế",
+        "content": "Giới thiệu trường của em",
+        "product": "3 câu nói",
+        "method": "Trình bày cá nhân"
+      }
+    ]
+  },
+  "exam": {
+    "title": "Bài kiểm tra mẫu: My New School",
+    "duration": 15,
+    "matrix": "Chủ đề: My New School; Biết: câu 1–2; Hiểu: câu 3–4; Vận dụng: câu 5. Giáo viên đối chiếu phụ lục Công văn 7991.",
+    "specification": "Câu 1–2 nhận biết từ vựng; câu 3–4 hiểu ngữ cảnh; câu 5 viết câu vận dụng.",
+    "questions": [
+      {
+        "number": 1,
+        "type": "trắc nghiệm",
+        "level": "Biết",
+        "topic": "School",
+        "prompt": "Choose the word for “trường học”.",
+        "options": [
+          "A. school",
+          "B. home"
+        ],
+        "answer": "A. school",
+        "points": 2
+      },
+      {
+        "number": 2,
+        "type": "trắc nghiệm",
+        "level": "Biết",
+        "topic": "Classroom",
+        "prompt": "Choose the word for “lớp học”.",
+        "options": [
+          "A. classroom",
+          "B. garden"
+        ],
+        "answer": "A. classroom",
+        "points": 2
+      },
+      {
+        "number": 3,
+        "type": "trắc nghiệm",
+        "level": "Hiểu",
+        "topic": "Teacher",
+        "prompt": "Who teaches students?",
+        "options": [
+          "A. teacher",
+          "B. student"
+        ],
+        "answer": "A. teacher",
+        "points": 2
+      },
+      {
+        "number": 4,
+        "type": "trả lời ngắn",
+        "level": "Hiểu",
+        "topic": "School",
+        "prompt": "Complete: I go to ____ every day.",
+        "answer": "school",
+        "points": 2
+      },
+      {
+        "number": 5,
+        "type": "tự luận",
+        "level": "Vận dụng",
+        "topic": "School",
+        "prompt": "Write one sentence about your school.",
+        "answer": "Chấp nhận câu đúng ngữ pháp, đúng chủ đề; ví dụ: My school is big.",
+        "points": 2
+      }
+    ],
+    "markingGuide": "Mỗi câu đúng 2 điểm; câu 5 chấm theo nội dung và ngữ pháp."
+  },
+  "slide": {
+    "title": "My New School",
+    "slides": [
+      {
+        "title": "My New School",
+        "bullets": [
+          "What makes a school feel like your school?",
+          "Hôm nay: gọi tên nơi chốn, hỏi đáp và giới thiệu trường bằng 2–3 câu"
+        ],
+        "imageQuery": "school building students",
+        "speakerNotes": "Giới thiệu bài học."
+      },
+      {
+        "title": "Mục tiêu",
+        "bullets": [
+          "Gọi đúng tên: school, classroom, teacher",
+          "Dùng mẫu My school is ... để mô tả một đặc điểm cụ thể",
+          "Hỏi bạn về trường rồi trả lời bằng một câu hoàn chỉnh"
+        ],
+        "speakerNotes": "Nêu yêu cầu cần đạt."
+      },
+      {
+        "title": "Khởi động",
+        "bullets": [
+          "Quan sát ảnh: nơi nào là classroom, ai là teacher?",
+          "Nói một điều em thường làm ở trường",
+          "Dự đoán chủ đề qua ba từ khóa trên bảng"
+        ],
+        "imageQuery": "students classroom teacher",
+        "speakerNotes": "Gợi mở câu trả lời."
+      },
+      {
+        "title": "Từ vựng",
+        "bullets": [
+          "school — nơi em học mỗi ngày: I go to school.",
+          "classroom — phòng học: This is our classroom.",
+          "teacher — người dạy: My teacher is friendly."
+        ],
+        "speakerNotes": "Luyện phát âm."
+      },
+      {
+        "title": "Luyện nghe",
+        "bullets": [
+          "Nghe 3 từ và đánh số hình theo thứ tự nghe được",
+          "Đọc lại theo cặp, chú ý âm cuối của school",
+          "Ghép mỗi từ với câu ví dụ đúng"
+        ],
+        "speakerNotes": "Giáo viên đọc mẫu."
+      },
+      {
+        "title": "Luyện nói",
+        "bullets": [
+          "A: What is your school like?",
+          "B: My school is big and clean.",
+          "Đổi vai rồi thay big bằng một tính từ phù hợp với trường em"
+        ],
+        "speakerNotes": "Làm việc theo cặp."
+      },
+      {
+        "title": "Hoạt động nhóm",
+        "bullets": [
+          "Viết: My school is ... / It has ... / My teacher is ...",
+          "Bạn cùng nhóm góp ý một từ hoặc một câu cho rõ hơn",
+          "Chọn một câu hay để đọc trước lớp"
+        ],
+        "speakerNotes": "Cho học sinh thảo luận."
+      },
+      {
+        "title": "Kiểm tra nhanh",
+        "bullets": [
+          "Who teaches students? → A teacher.",
+          "Where do we study? → In a classroom.",
+          "Hoàn thành: My school ___ big. → is"
+        ],
+        "speakerNotes": "Kiểm tra hiểu bài."
+      },
+      {
+        "title": "Vận dụng",
+        "bullets": [
+          "Giới thiệu trường trong 20 giây, nêu tên và một đặc điểm",
+          "Dùng ít nhất hai từ: school, classroom, teacher",
+          "Bạn nghe ghi lại một chi tiết bạn nói"
+        ],
+        "speakerNotes": "Gọi một vài học sinh trình bày."
+      },
+      {
+        "title": "Củng cố",
+        "bullets": [
+          "Ba từ cần nhớ: school, classroom, teacher",
+          "Tự viết hai câu đúng về trường của em",
+          "Chuẩn bị một bức ảnh hoặc một nét vẽ về trường cho buổi sau"
+        ],
+        "speakerNotes": "Tóm tắt bài học."
+      }
+    ]
+  },
+  "skkn": {
+    "title": "Tăng hứng thú học từ vựng Tiếng Anh lớp 6",
+    "introduction": "BẢN DỰ THẢO. Vấn đề: học sinh cần cơ hội dùng từ vựng trong tình huống gần gũi.",
+    "basis": "[CẦN GIÁO VIÊN BỔ SUNG] cơ sở lý luận và nguồn tài liệu đã kiểm chứng.",
+    "situation": "[CẦN GIÁO VIÊN BỔ SUNG] số liệu thực trạng tại lớp.",
+    "measures": "Dự kiến dùng tranh, hoạt động cặp và trò chơi ngắn; điều chỉnh theo điều kiện lớp.",
+    "evaluation": "Kết quả thực tế: [CẦN GIÁO VIÊN BỔ SUNG]. Kết quả kỳ vọng: học sinh tham gia tích cực hơn.",
+    "applicability": "Có thể thử ở lớp 6, cần đánh giá trong bối cảnh từng trường.",
+    "conclusion": "Biện pháp cần được thử nghiệm và ghi nhận minh chứng.",
+    "recommendations": "Bổ sung số liệu trước/sau, phản hồi học sinh và xác nhận của tổ chuyên môn."
+  }
+}
